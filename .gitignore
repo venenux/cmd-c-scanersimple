@@ -3,6 +3,12 @@
 *.lo
 *.o
 
+# stupid stuff
+*.db
+*.pgm
+*.~
+*.adjunta
+
 # Compiled Dynamic libraries
 *.so
 *.dylib
