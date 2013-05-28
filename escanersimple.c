@@ -1,5 +1,5 @@
 /*
- * main.c 
+ * scanersimple.c  Este programa es GNU, visite www.gnu.org para ver la licensia
  * 
  */
 

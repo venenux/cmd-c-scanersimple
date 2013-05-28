@@ -24,3 +24,7 @@ USO:
 5. ejecute ./scanersimple
 
 Si no hay dispositivos escaneadores de dedos el programa salira.
+
+LICENCIA:
+
+GPLv3+
