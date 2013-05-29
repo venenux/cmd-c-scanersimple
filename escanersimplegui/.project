@@ -1,0 +1,19 @@
+# Gambas Project File 3.0
+# Compiled with Gambas 3.4.0
+Title=scanersimple : GUI
+Startup=FMain
+Version=0.0.0
+Component=gb.image
+Component=gb.gui
+Component=gb.form
+Component=gb.vb
+Description="scanersimple"
+Authors="PICCORO Lenz McKAY <mckaygerhard@gmail.com>"
+TabSize=2
+Translate=1
+Language=en
+RunAfter=scanergui.gambas
+ControlPublic=1
+ModulePublic=1
+SourcePath=/home/intranet/devel/escanersimple
+Packager=1

@@ -1,0 +1,68 @@
+' Gambas class file
+
+Library "libfprint:0"
+
+Private Extern fp_init() As Integer
+Private Extern fp_exit()
+
+
+Public Sub _new()
+
+End
+
+'' Entrada principal al ejecutar el form, equivalente a main
+Public Sub Form_Open()
+
+  ' detenemos temporizador de muestra de la foto/huella
+    tiempotranscurrido_foto.Stop
+  ' y escondemos la foto/huella, limpiando al pantalla de la ventana
+    img_mostrar_scan.Hide
+  ' como capturamos, al pulsar el boton, se activa la funcion abajo "scanear_dedo_button_Click"
+
+End
+
+'' si pulsamos el boton se activa este evento y manda escanear con el llamado a la funcion
+Public Sub scanear_dedo_button_Click()
+  ' antes de escanear escondemos el boton para que no le den varias veces
+  scanear_dedo_button.Visible = False
+  scanear_dedo_button.Hide
+  scanear_dedo_button.Refresh
+  ' marcamos un tiempo de inicio, sera usado por el temporizador de la muestra de foto abajo
+  scan_dedo_imagen("usuarioaescanear")
+End
+
+
+'' funcion de proceso de escaneado del dedo, ojo el control se pasa al proceso invocado (despues se mejora)
+Public Sub scan_dedo_imagen(usuario As String)
+  
+Dim devlib As Integer ' resultado de existencia de libreria de escaneo de huella
+Dim ramdi As Integer ' numero atachado para la nueva huella cada vez se tome otra
+Dim ruta_y_foto As String ' variable para indicar la ruta y nombre de la foto del huella digital
+
+  Randomize CInteger(Val(Format$(Now, "ddmmyyyyhhnnss"))) ' inicio el aleatorio con una semilla, igual a fecha como numero
+
+  ramdi = Int(Rnd * 100000000) ' calculo numero aleatorio pero entero
+  ruta_y_foto = "/tmp/" & usuario & ramdi & ".pgm" '' nombre del archivo temporal, la imagen no se guardara nunca
+
+  devlib = fp_init() ' deteccion de si tenemos libfprint instalada, para poder invocar el programa
+    If (devlib < 0) Then
+      Message.Error("Libreria de escaneo no instalada/detectada, favor revisar o reportar fallo")
+      Return
+    Else
+      Print "Liberia encontrada, command line utils can be invocado"
+      fp_exit()
+    Endif
+  ' la imagen se guarda en archivo, si existe previo, eliminamos cualquier archivo previo
+  If Exist(ruta_y_foto) Then Kill ruta_y_foto
+  ' pedimos a nuestra aplicacion que tome una foto del dedo
+  Exec ["escanersimple", "enroll", "image", ruta_y_foto] ' ojo, aqui debes alterar este "escanersimple" pro la ruta del exe de c
+  ' tomamos el tiempo para solo mostrar la fotico unos segundos
+  FMain.img_mostrar_scan.Picture = Picture[ruta_y_foto]
+  ' operacion exitosa, mostramos la foto a este putno el boton estara oculto hasta que el timer lo muestre
+  FMain.img_mostrar_scan.Show
+  ' listo, mensage a consola para avisar
+  Print "procesado : " & ruta_y_foto
+  
+End
+
+
