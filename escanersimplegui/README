@@ -1,0 +1,46 @@
+
+scanersimplegui
+===============
+
+GUI interfaz grafica para escanersimple
+
+Es un simple ejemplo de :
+
+1. como usar librerias externas de C en gambas
+2. como invocar una linea de comandos, 
+3. y tomar su archivo generado para mostrarlo en la ventana
+
+Adicionalmente despues de tomar el archivo, borra este.
+
+Licencia:
+========
+
+Licencia GPLv3 ademas de que todo autor debe citar autores previos.
+
+Requerimientos: 
+===============
+
+* gambas3 con modulos de gui, vb, form, image; 
+* adicional imagemagick y gtk instalados segun el gambas
+
+NOTAS: 
+=====
+
+este proyecto nunca se traducira a español, 
+ademas se usaran en futuro codificacion cirilica, 
+pero idioma español en dichos caracteres.
+Esto porque estoy en contra de traductores online español-english
+
+Versiones futuras:
+=================
+
+* Soporte DB
+* Implementacion directa de la libreria
+* Configuracion por archivo
+* Soporte webcam
+* Encriptacion y storage en DB
+* Deteccion de teclado
+* bloqueo de interfaz en enrolamiento de foto
+* Log de hora y disparo
+
+Las versiones futuras estaran en otro repo para no romper el esquema didactico.
