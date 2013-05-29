@@ -6,11 +6,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 /* inclusion de libfprint, ojo deben tener el repo venenux y libfprint-dev instalado */
 #include <fprint.h>
 
 int main(int argc, char **argv)
 {
+
+	unsigned char *nombreimagen = "dedoescaneado.pgm";
+	int procesoscan = 0;
+
+	/* manejo de argumentos para decirle nombre de la imagen */
+	int argnm;
+	for(argnm = 1; argnm < argc; argnm++)
+	{
+		if( strcmp(argv[argnm],"image") == 0) /* buscamos si se mando especificar el argumento de iamegn (nombre de) */
+			nombreimagen = argv[argnm+1]; /* si encontramos imagen en argumentos, asumimos el sieguiente4 el nombre */
+		if( strcmp(argv[argnm],"enroll") == 0)
+			procesoscan = 1; /* anadimos esto para dedirle al programa, que escanee , sino obviamos, seguridad? quiza! */
+	}
 
 	int devresult = 1; /* usaremos esto para marcar el estado de nuestro dispositivo usandose */
 	int prg_sts = 0; /* estado en que se esta el programa, asume todo malo, se verifica en el camino todo */
@@ -51,15 +65,17 @@ int main(int argc, char **argv)
 	struct fp_print_data *data_deo_tempo = NULL; /* reservo otro lugarcito para datos de manejo */
 	int r;
 
+	/* if ( procesoscan == 1 ) */ /* descomenta esta linea para usar el parametro enroll */
 	do /* metemos un bucle para que espere por el escaneo una vez prendido */
 	{
 		struct fp_img *img = NULL; /* reservo un lugar para manejar la imagen, una fotico de la victima */
 		r = fp_enroll_finger_img ( dispositivo, &data_deo_tempo, &img); /* en este punto se enciende el dispositivo  */
 		if(img) /* despues de escanear, libfprint maneja el device, si guardo algo, img no es nulo */
 		{
-			fp_img_save_to_file ( img, ".pgm");
+			fp_img_save_to_file ( img, nombreimagen);
 			fp_img_free (img);
 			fp_print_data_free(data_deo_tempo);
+			fprintf(stderr,"salvada imagen en %s\n",nombreimagen);
 		}
 		/* la variable img, su ubicacion en ram tendra datos y no sera nula si todo fue bien */
 		/* r guarda el resultado de la operacion, haya escaneado o no la imagen */
