@@ -1,7 +1,7 @@
-scanersimple: como programar y usar un scaner de huellas digitales
+scanersimple: como programar y usar un lector huella dactilar
 ============
 
-scanersimple, aplicacion para aprender usar el finger print library
+scanersimple, aplicacion para aprender usar el finger print library: lector huella dactilar
 scanersimplegui, interfaz grafica que ejemplifica como usar dicho programa scanersimple
 
 
