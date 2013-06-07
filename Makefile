@@ -1,26 +1,21 @@
 
 CC = gcc
-CFLAGS = -g -Wall
-# tenemos un main.c y diremos que contruya en objeto scanersimple.o
-OBJECTS = escanersimple.o
+CFLAGS = -g -Wall 
 # usamos libfprint, debemos incluir su directorio de cabeceras, requeire libfprint-dev
-INCFLAGS = -I/usr/include/libfprint  
+INCFLAGS = -I/usr/include/libfprint 
 # usamos venenux<= 1.0  por tanto buscamos liberias en usr/lib
-LDFLAGS = -Wl,-rpath,/usr/lib -lfprint  
+LDFLAGS = -lfprint  
 
-all: clean escanersimple
+all: clean escanersimple escanerdedo
 
-escanersimple: $(OBJECTS)
-	$(CC) -o escanersimple $(OBJECTS) $(LDFLAGS)
+escanersimple:
+	$(CC) -o escanersimple $@.c $(LDFLAGS) $(INCFLAGS)
 
-.SUFFIXES:
-.SUFFIXES:	.c .cc .C .cpp .o
-
-.c.o :
-	$(CC) -o $@ -c $(CFLAGS) $< $(INCFLAGS)
+escanerdedo:
+	$(CC) -o escanerdedo $@.c $(LDFLAGS) $(INCFLAGS)
 
 clean:
-	rm -f *.o escanersimple
+	rm -f *.o *.pgm *.pnm escanersimple escanerdedo
 
 .PHONY: all
 .PHONY: clean
