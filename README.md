@@ -4,6 +4,12 @@ scanersimple: como programar y usar un lector huella dactilar
 scanersimple, aplicacion para aprender usar el finger print library: lector huella dactilar
 scanersimplegui, interfaz grafica que ejemplifica como usar dicho programa scanersimple
 
+La documentacion y progreso se lleva en http://solognu.org/issues/44 el desarrollo completo, aquí solo se guarda el código por facilidad y presencia en redes sociales de programación
+
+**Este codigo es parte del proyecto de IT/PYMES de solognu.org:** 
+
+[Proeycto IT/PYMES: http://solognu.org](http://solognu.org/projects/sistemascoprit/issues/gantt)
+
 
 Instrucciones
 =============
