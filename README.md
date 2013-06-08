@@ -27,8 +27,14 @@ este subdirectorio contiene el gui en gambas3, cargelo en su ide gambas3.
 
 Notas:
 
+debe agregar el repositorio VenenuX e instalar asi: aptitude install libfprint-dev
+para poder desarrollar y/o usar este codigo fuente
+
 libfprint puede ser consumido como C o C++ dado la forma de usarse de la misma libreria.
 
+para la interfaz gui debe agregar el repositorio venenux e instalar: aptitude install gambas3
+
+El codigo C compila en etch, lenny/0.8 o squeeze/0.9, el gui solo en estos dos ultimos.
 
 USO, compilar y ver el fuente:
 =============================
@@ -39,9 +45,9 @@ Para el codigo C ( scanersimple.c ) :
 2. descarge el codigo, y el makefile
 3. coloquelo en un diretorio
 4. ejecute make all
-5. ejecute ./scanersimple
+5. ejecute ./scanersimple o ./escanerdedo
 
-Si no hay dispositivos escaneadores de dedos el programa salira.
+Si no hay dispositivos escaneadores de dedos el programa salira con codigo error 99 o 1.
 
 
 Para usar el gui en gambas3 (scanersimplegui.class ) :
@@ -71,3 +77,4 @@ Versiones futuras:
 * Log de hora y disparo
 
 Las versiones futuras estaran en otro repo para no romper el esquema didactico.
+En este repo estara solo escanersimple, escanerdedo y la gui gambas3
