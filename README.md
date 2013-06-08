@@ -22,12 +22,11 @@ Con este ejemplo secuencial, puede ser usado como C o C++
 
 esto porque accede a lugares reservados de memoria en vez de acceder a variables.
 
-en la raiz tiene scanersimple.c y un makefile, tambien esta un subdirectorio, 
-este subdirectorio contiene el gui en gambas3, cargelo en su ide gambas3.
+prerequisitos
 
-Notas:
+* libfprint.
 
-debe agregar el repositorio VenenuX e instalar asi: aptitude install libfprint-dev
+deberia agregar el repositorio VenenuX e instalar asi: aptitude install libfprint-dev
 para poder desarrollar y/o usar este codigo fuente
 
 libfprint puede ser consumido como C o C++ dado la forma de usarse de la misma libreria.
