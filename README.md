@@ -8,7 +8,7 @@ La documentacion y progreso se lleva en http://solognu.org/issues/44 el desarrol
 
 **Este codigo es parte del proyecto de IT/PYMES de solognu.org:** 
 
-[Proeycto IT/PYMES: http://solognu.org](http://solognu.org/projects/sistemascoprit/issues/gantt)
+[Proyecto IT/PYMES: http://solognu.org](http://solognu.org/projects/sistemascoprit/issues/gantt)
 
 
 Instrucciones
