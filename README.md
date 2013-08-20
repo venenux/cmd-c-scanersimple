@@ -63,17 +63,3 @@ LICENCIA:
 
 GPLv3+
 
-Versiones futuras:
-=================
-
-* Soporte DB
-* Implementacion directa de la libreria
-* Configuracion por archivo
-* Soporte webcam
-* Encriptacion y storage en DB
-* Deteccion de teclado
-* bloqueo de interfaz en enrolamiento de foto
-* Log de hora y disparo
-
-Las versiones futuras estaran en otro repo para no romper el esquema didactico.
-En este repo estara solo escanersimple, escanerdedo y la gui gambas3
