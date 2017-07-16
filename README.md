@@ -1,20 +1,18 @@
-scanersimple: como programar y usar un lector huella dactilar
+scanersimple: programar y usar lector huella dactilar
 ============
 
 scanersimple, aplicacion para aprender usar el finger print library: lector huella dactilar
 scanersimplegui, interfaz grafica que ejemplifica como usar dicho programa scanersimple
 
-La documentacion y progreso se lleva en http://solognu.org/issues/44 el desarrollo completo, aquí solo se guarda el código por facilidad y presencia en redes sociales de programación
+**Este codigo es parte del proyecto simplecontrolasistencia:** 
 
-**Este codigo es parte del proyecto de IT/PYMES de solognu.org:** 
-
-[Proyecto IT/PYMES: http://solognu.org](http://solognu.org/projects/sistemascoprit/issues/gantt)
+[https://github.com/venenux/simplecontrolasistencia](https://github.com/venenux/simplecontrolasistencia.git)
 
 
 Instrucciones
 =============
 
-El codigo fuente de c tiene en cada linea documentado, 
+El codigo fuente de c tiene cada linea documentado, 
 
 ademas evita usar funciones y direcciones de memoria desde las mismas.
 
@@ -48,15 +46,7 @@ Para el codigo C ( scanersimple.c ) :
 
 Si no hay dispositivos escaneadores de dedos el programa salira con codigo error 99 o 1.
 
-
-Para usar el gui en gambas3 (scanersimplegui.class ) :
-
-1. aptitude install gambas3
-2. abra el ide gambas3
-3. busque el proyecto, esto solo con encontrar el directorio donde descargo este fuente
-4. revise el codigo, debe cambiar la ruta del ejecutable en la funcion "scan_dedo_imagen" 
-4.1. cambielo por la ruta exacta donde esta el compilado anterior de c
-5. en "proyecto" puede generar un tarbal o ejecutable gambas
+Este programa se emplea con la interfaz grafica simplecontrolasistencia.
 
 LICENCIA:
 ========
